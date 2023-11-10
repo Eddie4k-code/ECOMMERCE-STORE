@@ -16,11 +16,8 @@ jobs:
     - name: Build Docker image for frontend
       run: docker build -t frontend frontend/  # Assuming Dockerfile is in frontend/
 
-    - name: Run Docker Image
+    - name: Run npm test on container
       run: docker run frontend npm test
-
-    - name: Stop Docker Image
-      run: docker stop frontend
 
     - name: Remove Container
       run: docker rm frontend
