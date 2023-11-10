@@ -21,7 +21,6 @@ const Landing = () => {
         <section className="hero">
         <h2>Welcome to UShopia!</h2>
         <p className="free-shipping">FREE SHIPPING ON ALL ORDERS</p>
-        <a href="#" className="btn">About Us</a>
     </section>
 
     <h2 className="featured__product__title">Products Currently in Stock!</h2>
