@@ -1,4 +1,4 @@
-name: CI
+name: Create Release
 
 on:
   push:
@@ -7,17 +7,22 @@ on:
 
 jobs:
   build:
+    name: Create Release
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Build Docker image for frontend
-      run: docker build -t frontend frontend/  # Assuming Dockerfile is in frontend/
-
-    - name: Run npm test on container
-      run: docker run frontend npm test
-
-    - name: Remove Container
-      run: docker rm frontend
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false
