@@ -19,7 +19,7 @@ const Landing = () => {
 
         <>
         <section className="hero">
-        <h2>Welcome to our UShopia!</h2>
+        <h2>Welcome to UShopia!</h2>
         <p className="free-shipping">FREE SHIPPING ON ALL ORDERS</p>
         <a href="#" className="btn">About Us</a>
     </section>

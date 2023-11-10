@@ -28,7 +28,7 @@ const Navbar = () => {
 
 
         <nav className="navbar">
-        <a href="#" className="navbar__brand">Ushopia</a>
+        <a href="#" className="navbar__brand">UShopia</a>
         <div className="search-container">
           <form onSubmit={onSearch}>
           <input type="text" onChange={(e) => setSearchQuery(e.target.value)} className="navbar__search" placeholder="Search..." />
