@@ -18,3 +18,9 @@ jobs:
 
     - name: Run Docker Image
       run: docker run frontend
+
+    - name: Stop Docker Image
+      run: docker stop frontend
+
+    - name: Remove Container
+      run: docker rm frontend
