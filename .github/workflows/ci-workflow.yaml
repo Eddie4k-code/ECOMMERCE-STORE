@@ -13,17 +13,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Get Commit Message
+        id: commit_message
+        run: echo "::set-output name=message::$(git log --format=%B -n 1)"
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ github.run_number }} 
+          tag_name: v${{ github.run_number }}
           release_name: Release v${{ github.run_number }}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
+          body: ${{ steps.commit_message.outputs.message }}
           draft: false
           prerelease: false
+
