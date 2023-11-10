@@ -35,7 +35,7 @@ const Navbar = () => {
           </form>
         </div>
         <ul className="navbar__items">
-          <li className="navbar__item"><a href="#">Home</a></li>
+          <li className="navbar__item"><a href="/">Home</a></li>
           <li className="navbar__item"><a className="shopping-cart" onClick={() => setCartModalOpen(true)}>{<TiShoppingCart />} <a>{cart.length}</a></a></li>
           {isCartModalOpen && <CartModal onClose={() => setCartModalOpen(false)} cartItems={cart}/>}
         </ul>
