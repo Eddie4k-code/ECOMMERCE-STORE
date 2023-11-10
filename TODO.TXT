@@ -1,0 +1,1 @@
+In backend add webhook check out suceeded event and on event have it decrease the inventory amount of the product.

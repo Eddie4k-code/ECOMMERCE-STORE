@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Build Docker image for frontend
+      run: docker build -t frontend frontend/  # Assuming Dockerfile is in frontend/
+
+    - name: Run Docker Image
+      run: docker run frontend
