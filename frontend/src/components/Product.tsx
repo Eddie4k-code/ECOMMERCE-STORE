@@ -67,7 +67,7 @@ const Product = ({ title, mainImage, description, category, price, imagePaths, _
     return (
 
         <div className="product">
-            <img className="product-image" src={mainImage}/>
+            <img src={mainImage}/>
             <h3>{title}</h3>
             {/*<p>{description}</p>*/}
             <span className="price">${price}</span>
