@@ -69,7 +69,7 @@ const Product = ({ title, mainImage, description, category, price, imagePaths, _
         <div className="product">
             <img src={mainImage}/>
             <h3>{title}</h3>
-            <p>{description}</p>
+            {/*<p>{description}</p>*/}
             <span className="price">${price}</span>
             <a onClick={() => addItemToCart(currentProduct)} className="btn">Add to Cart</a>
             <a onClick={viewItem} className="btn">View Item</a>
