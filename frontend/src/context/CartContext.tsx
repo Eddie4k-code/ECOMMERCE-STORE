@@ -40,11 +40,11 @@ export const CartContextProvider = ({ children }: { children: React.ReactNode })
        }
 
 
-        //If item already exists in cart then increase the quantity
+        //If item already exists in cart then make the user aware
         if (findExistingProduct !== -1) {
-            cart[findExistingProduct].quantity += 1;
+            setAddToCartError('This product is already in your cart!');
         } else {
-            //Add new product to cart
+            //Add new product to cart if its not already in the users inventory.
             setCart([...cart, product]);
         }
 
