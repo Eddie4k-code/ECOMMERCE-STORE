@@ -13,12 +13,15 @@ import Success from './pages/Success';
 import Cancelled from './pages/Cancel';
 import { CartContextProvider } from './context/CartContext';
 import ProductDetail from './pages/ProductDetail';
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from 'react-toastify';
 
 
 
 function App() {
   return (
     <div className="App">
+      <ToastContainer />
         <BrowserRouter>
         <CartContextProvider>
         <AuthContextProvider>

@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useCartContext } from "../custom_hooks/useCartContext";
 import { IProduct } from "../pages/SearchResults";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
+
 
 /* Component for a Single Product */
 
@@ -57,6 +61,8 @@ const Product = ({ title, mainImage, description, category, price, imagePaths, _
         navigate(`/product-detail/${_id}`);
 
     }
+
+
 
 
     

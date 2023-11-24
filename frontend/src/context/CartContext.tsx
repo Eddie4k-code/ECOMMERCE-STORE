@@ -3,7 +3,8 @@ import react, { useEffect, useState, createContext } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import { ICartProduct } from '../components/Product';
 import { updateArrayBindingPattern } from 'typescript';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface CartContextStructure {
     cart: ICartProduct[]
@@ -43,6 +44,9 @@ export const CartContextProvider = ({ children }: { children: React.ReactNode })
         //If item already exists in cart then make the user aware
         if (findExistingProduct !== -1) {
             setAddToCartError('This product is already in your cart!');
+            toast.error(addToCartError, {
+                position: toast.POSITION.BOTTOM_RIGHT
+            })
         } else {
             //Add new product to cart if its not already in the users inventory.
             setCart([...cart, product]);
